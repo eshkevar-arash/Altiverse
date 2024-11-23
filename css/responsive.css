@@ -1,0 +1,379 @@
+
+html{
+    font-size: 10px;
+    box-sizing: border-box;
+}
+*,*::before,*::after{
+    box-sizing: inherit;
+}
+a{
+    text-decoration: none;
+}
+body{
+    font-size: 1.6rem;
+    line-height: 1.6;
+}
+.container{
+    width: 100%;
+    padding: 0 1.5rem;
+    margin: 0 auto;
+    position: relative;
+
+}
+@media screen and (min-width: 576px) {
+    .container {
+        width: 54rem;
+    }
+}
+@media screen and (min-width: 768px) {
+    .container {
+        width: 72rem;
+    }
+}
+@media screen and (min-width: 992px) {
+    .container {
+        width: 96rem;
+    }
+
+}
+@media screen and (min-width: 1200px) {
+    .container {
+        width: 114rem;
+    }
+
+}
+@media screen and (min-width: 1400px) {
+    .container {
+        width: 137rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1400px) {
+    .nav__link {
+        padding: 9px 18px; /* افزایش فضای داخلی */
+        font-size: 14px; /* کاهش کمی در اندازه فونت */
+    }
+    .nav__logo-image {
+        width: 7.5rem;
+    }
+    .header-sidebar{
+        padding-top: 16rem;
+    }
+    .header-sidebar__title{
+        font-size: 14px;
+    }
+    .header-sidebar__image {
+        width: 3.4rem; /* کاهش اندازه */
+    }
+    .header-bottom__right{
+
+
+    }
+}
+@media screen and (max-width: 1200px) {
+    .nav__list {
+        gap: 1.5rem; /* کاهش فاصله بین آیتم‌ها */
+    }
+    .nav__link {
+        padding: 8px 16px;
+        font-size: 13px; /* کاهش اندازه فونت */
+    }
+    .nav__logo-image {
+        width: 7rem;
+    }
+    .header-sidebar{
+        padding-top: 15rem;
+    }
+    .header-sidebar__title{
+        font-size: 13px;
+    }
+    .header-sidebar__image {
+        width: 3.2rem; /* کاهش بیشتر اندازه */
+    }
+    .header-sidebar__item{
+        width: 3rem;
+        height: 3rem;
+    }
+    .header-sidebar__icon{
+        font-size: 1.6rem;
+    }
+    .header-sidebar__list{
+        gap: 1.3rem;
+    }
+    .header-bottom__right{
+        width: 65rem;
+    }
+    .header-left__title {
+        font-size: 6rem;
+        font-family: poppins-bold;
+    }
+}
+@media screen and (max-width: 1100px) {
+    .header-bottom__right{
+        width: 60rem;
+    }
+    .header-left__caption {
+        font-size: 14px;
+    }
+    .header-left__title {
+        font-size: 5rem;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .header::before , .header::after {
+        height: 25rem;
+        width: 25rem;
+    }
+    .dots{
+        width: 10rem;
+    }
+    .nav__list {
+        gap: 2rem; /* کاهش بیشتر فاصله بین آیتم‌ها */
+        position: fixed;
+        top: 0;
+        left:-25rem;
+        bottom: 0;
+        width: 25rem;
+        background-color: rgba(169, 169, 169, 0.7); /* رنگ طوسی شفاف */
+        backdrop-filter: blur(10px); /* افکت بلور برای پس‌زمینه */
+        z-index: 1000;
+        flex-direction: column;
+        justify-content: start;
+        padding: 4rem 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* سایه برای عمق بیشتر */
+        border-right: 1px solid rgba(255, 255, 255, 0.2); /* خط راست نازک سفید برای جدا کردن */
+        transition: left .3s linear;
+        align-items: stretch;
+    }
+    .nav__item{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .nav__list.open{
+        left: 0;
+        background: linear-gradient(180deg, rgba(169, 169, 169, 0.9), rgba(117, 34, 162, 0.7)); /* گرادیان جذاب */
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* سایه عمیق‌تر */
+        transition: left 0.4s ease-in-out, background 0.3s ease;
+    }
+    .nav__link {
+        padding: 7px 14px;
+        font-size: 12px; /* کاهش بیشتر اندازه فونت */
+    }
+    .nav__logo-image {
+        width: 6.5rem;
+    }
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+    }
+    .nav__item.active{
+        background-color: transparent;
+
+    }
+    .nav__item.active .nav__link {
+        background: linear-gradient(45deg, var(--color_7522a2), var(--coloe_650859));
+        color: #fff;
+        font-family: poppins-bold;
+        box-shadow: 0 4px 15px rgba(117, 34, 162, 0.7), inset 0 -3px 5px rgba(0, 0, 0, 0.3);
+        transform: scale(1.1);
+        text-shadow: 0px 2px 10px rgba(255, 255, 255, 0.6);
+        transition: all 0.3s ease;
+    }
+
+    .menu-toggle .bar {
+        width: 30px;
+        height: 4px;
+        background-color: white;
+        border-radius: 2px;
+        pointer-events: none;
+        transition: all .3s linear;
+    }
+    .menu-toggle.open .bar1 {
+        transform: rotate(45deg);
+        position: relative;
+        top: 8px;
+    }
+
+    .menu-toggle.open .bar2 {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    .menu-toggle.open .bar3 {
+        transform: rotate(-45deg);
+        position: relative;
+        top: -8px;
+    }
+    .cover {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9));
+        z-index: 999;
+        cursor: pointer;
+        opacity: 0;
+        overflow: hidden;
+        transition: opacity 0.3s ease-in-out, height 0.3s ease-in-out;
+    }
+
+    .cover.fade {
+        opacity: 1;
+        height: 100%;
+        overflow: visible;
+    }
+    .header-bottom{
+        padding-top: 8rem;
+    }
+
+    .nav__list:hover li:not(:hover, .active) a {
+        opacity: 0.5; /* کاهش شفافیت برای مواردی که هاور نیستند */
+        color: transparent; /* متن نامرئی می‌شود */
+        -webkit-text-stroke: 1px var(--color_7522a2); /* اضافه کردن خط دور با رنگ بنفش */
+        transition: all 0.3s ease-in-out; /* اضافه کردن انیمیشن نرم */
+    }
+
+    .nav__item:hover:not(.active) .nav__link {
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2));
+        color: #fff; /* سفید کردن متن */
+        text-shadow: 0 2px 5px rgba(255, 255, 255, 0.5), 0 0 10px var(--coloe_650859); /* افکت درخشش */
+        box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3); /* سایه پویا */
+        transform: scale(1.1) translateY(-2px); /* بزرگ‌تر شدن و حرکت جزئی به بالا */
+        transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); /* انیمیشن جذاب‌تر */
+        position: relative; /* برای خط زیرین */
+    }
+    .header-sidebar{
+        padding-top: 14rem;
+    }
+    .header-sidebar__title{
+        font-size: 13px;
+    }
+    .header-sidebar__image {
+        width: 3rem; /* کاهش بیشتر اندازه */
+    }
+    .header-sidebar__list{
+        padding-bottom: 1.5rem;
+        gap: 1.2rem;
+    }
+    .header-sidebar__item{
+        width: 2.8rem;
+        height: 2.8rem;
+    }
+    .header-sidebar__icon{
+        font-size: 1.4rem;
+    }
+    .header-bottom__right{
+        width: 40rem;
+
+    }
+    .header-bottom__left{
+        justify-content: start;
+        padding-top: 10rem;
+    }
+}
+@media screen and (max-width: 768px) {
+    .nav__list {
+        /*gap: 0.8rem; !* کاهش فاصله بیشتر *!*/
+    }
+    /*.nav__link {
+        padding: 6px 12px;
+        font-size: 11px; !* اندازه فونت کوچک‌تر *!
+    }*/
+    .nav__logo-image {
+        width: 6rem;
+    }
+    .header-sidebar__title{
+        font-size: 12px;
+    }
+    .header-sidebar{
+        padding-top: 13rem;
+    }
+    .header-sidebar__image {
+        width: 2.8rem; /* کاهش بیشتر اندازه */
+    }
+    .header-sidebar__list{
+        gap: 1.1rem;
+    }
+    .header-bottom__right{
+        width: 30rem;
+
+    }
+    .header-bottom__left{
+        align-items: center;
+        padding-left: 0;
+
+
+    }
+}
+@media screen and (max-width: 576px) {
+    .header::before , .header::after {
+        height: 20rem;
+        width: 20rem;
+    }
+    .nav__list {
+        /*flex-direction: column; !* تغییر جهت به عمودی *!
+        gap: 0.5rem; !* فاصله کمتر بین آیتم‌ها *!*/
+    }
+    /*.nav__link {
+        padding: 5px 10px;
+        font-size: 10px; !* کوچک‌تر کردن اندازه فونت *!
+    }*/
+    .nav__logo-image {
+        width: 5.5rem;
+    }
+    .header-bottom{
+        padding-top: 7rem;
+    }
+    .header-sidebar{
+        padding-top: 13rem;
+    }
+    .header-sidebar__title{
+        font-size: 11px;
+    }
+    .header-sidebar__image {
+        width: 2.6rem; /* کاهش بیشتر اندازه */
+    }
+    .header-sidebar__list{
+        padding-bottom: 1rem;
+        gap: 1rem;
+    }
+    .header-sidebar__item{
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+    .header-sidebar__icon{
+        font-size: 1.2rem;
+    }
+    .nav__logo-link {
+        margin-left: 1.4rem;
+    }
+}
+@media screen and (max-width: 510px) {
+    .header-bottom__left{
+        padding-left: 4rem;
+    }
+    .header-left__title{
+        font-size: 3.5rem;
+    }
+    .header-left__btn{
+        font-size: 13px;
+        padding: .5rem 1.6rem;
+    }
+    .header-left__caption{
+        font-size: 12px;
+        text-align: center;
+    }
+}

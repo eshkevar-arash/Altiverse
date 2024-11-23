@@ -1,0 +1,296 @@
+:root{
+    --coloe_650859: #650859;
+    --color_fff: #fff;
+    --color_171115: #171115;
+    --color_7522a2: #7522a2;
+}
+body{
+    font-family: poppins-regular, sans-serif;
+    background-color: var(--color_171115);
+    color: var(--color_fff);
+}
+.header{
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before ,.header::after {
+    content: '';
+    background-color: var(--coloe_650859);
+    height: 30rem;
+    width: 30rem;
+    border-radius: 100%;
+    filter: blur(50px);
+    position: absolute;
+    z-index: -1;
+}
+.header::before{
+    top: 0;
+    left: 0;
+    transform: translate(-50%,-50%);
+}
+.header::after{
+    top: 100%;
+    right: 0;
+    transform: translate(50%,-50%);
+}
+.header-top{
+    width: 100%;
+    padding-top: 1.6rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav__logo-link{
+
+}
+.nav__logo-image{
+    width: 8rem;
+    position: relative;
+    top: .7rem;
+}
+.dots{
+    width: 12.8rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+.dots__image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.nav__list{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex: 1;
+    justify-content: center;
+}
+.nav__item{
+
+}
+.nav__link{
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 15px;
+    transition: all 0.3s ease; /* انیمیشن نرم */
+}
+/* عملیات هاور برای لینک‌هایی که کلاس active ندارند */
+.nav__item:hover:not(.active) .nav__link {
+    background-color: rgba(117, 34, 162, 0.2); /* رنگ پس‌زمینه کم‌رنگ */
+    color: var(--color_7522a2); /* تغییر رنگ متن */
+    box-shadow: 0 4px 10px rgba(117, 34, 162, 0.4); /* سایه هنگام هاور */
+    transform: scale(1.05); /* بزرگ شدن جزئی لینک */
+}
+
+/* لینک‌های دارای کلاس active بدون تغییر در هاور */
+.nav__item.active .nav__link {
+    background-color: var(--color_7522a2); /* رنگ پس‌زمینه روشن */
+    color: #fff; /* متن سفید */
+    font-family: poppins-medium;
+    padding: 10px 20px; /* فاصله داخلی */
+    border-radius: 30px; /* گوشه‌های گرد تر */
+    box-shadow: 0 4px 8px rgba(117, 34, 162, 0.4), /* سایه بیرونی ملایم‌تر */
+    inset 0 -2px 4px rgba(0, 0, 0, 0.3); /* سایه داخلی نرم‌تر */
+    transform: translateY(-2px); /* حرکت جزئی به بالا */
+    transition: all 0.3s ease-in-out; /* انیمیشن نرم */
+    z-index: 1; /* قرار گرفتن روی سایر آیتم‌ها */
+}
+.menu-toggle {
+    display: none;
+}
+.header-bottom{
+    padding-top: 9rem;
+    min-height: 100vh;
+    width: 100%;
+}
+.header-sidebar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: poppins-semi-bold;
+    padding-top: 17rem;
+    z-index: 2;
+}
+.header-sidebar__title{
+    font-size: 16px;
+    transform: rotate(90deg);
+    animation: glow 1.5s ease-in-out infinite alternate;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        text-shadow: 0 0 20px rgba(117, 34, 162, 0.6), 0 0 30px rgba(117, 34, 162, 0.5);
+    }
+}
+.header-sidebar__image{
+    width: 3.6rem;
+    animation: bounce 1s ease-in-out infinite; /* انیمیشن حرکت */
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2)); /* سایه ملایم */
+    margin-top: 3rem;
+}
+@keyframes bounce {
+    0% {
+        transform: translateY(0); /* شروع از موقعیت اولیه */
+    }
+    50% {
+        transform: translateY(-10px); /* بالا رفتن */
+    }
+    100% {
+        transform: translateY(0); /* بازگشت به موقعیت اولیه */
+    }
+}
+.header-sidebar__list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+}
+.header-sidebar__item{
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%; /* گردتر شدن */
+    overflow: hidden;
+    position: relative; /* برای استفاده از پس‌زمینه‌های پویا */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.header-sidebar__link{
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+    border-radius: 50%; /* گرد بودن حاشیه‌ها */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* سایه سبک */
+}
+.header-sidebar__icon{
+    color: var(--color_7522a2);
+    font-size: 1.8rem;
+    transition: all .3s linear;
+}
+/*.header-sidebar__item:hover .header-sidebar__link{
+    transform: rotateY(360deg);
+    background-color: var(--color_7522a2);
+}
+.header-sidebar__item:hover .header-sidebar__link .header-sidebar__icon{
+    color: #fff;
+}*/
+.header-sidebar__item:hover .header-sidebar__link {
+    transform: scale(1.1) rotate(360deg); /* بزرگ‌تر شدن همراه با چرخش */
+    background: linear-gradient(135deg, var(--color_7522a2), var(--coloe_650859)); /* گرادیان برای جذابیت */
+    box-shadow: 0 0 10px rgba(117, 34, 162, 0.8), 0 0 20px rgba(117, 34, 162, 0.6); /* سایه‌های درخشان */
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s ease-in-out;
+}
+
+.header-sidebar__item:hover .header-sidebar__link .header-sidebar__icon {
+    color: #fff; /* متن سفید */
+    text-shadow: 0 0 5px #fff, 0 0 10px var(--coloe_650859); /* افکت درخشش روی آیکون */
+    transform: scale(1.2); /* بزرگ‌تر شدن آیکون */
+    transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+}
+.header-bottom__wrapper{
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+}
+.header-bottom__right{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 70rem;
+    z-index: -1;
+
+}
+.header-bottom__main-image{
+    width: 100%;
+    object-fit: cover;
+}
+.header-bottom__left{
+    position: relative;
+    min-height: 100vh;
+    flex: 1;
+    flex-direction: column;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    width: 100%;
+    z-index: 1;
+    gap: 3rem;
+    padding-left: 22rem;
+}
+.header-left__title{
+    font-size: 8rem;
+    font-family: poppins-bold;
+    line-height: 1.2; /* تنظیم فاصله خطی برای خوانایی بهتر */
+    letter-spacing: -2px; /* کمی فاصله منفی برای فشرده‌تر شدن حروف */
+    text-transform: uppercase; /* تبدیل متن به حروف بزرگ */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
+.header-left__btns{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.header-left__btn {
+    background-color: transparent;
+    border: 2px solid #7522a2; /* رنگ مرز بنفش */
+    padding: 0.8rem 2.4rem;
+    border-radius: 5rem;
+    color: #7522a2; /* رنگ متن بنفش */
+    font-size: 1.4rem;
+    font-weight: bold; /* تاکید بر وزن فونت */
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; /* اضافه کردن انیمیشن روان */
+    position: relative; /* برای استفاده از سایه‌ها */
+    text-transform: uppercase; /* تبدیل متن به حروف بزرگ */
+}
+
+.header-left__btn:focus {
+    outline: none; /* حذف outline هنگام فشرده شدن دکمه */
+}
+.header-left__btn:hover {
+    background-color: #7522a2; /* تغییر رنگ پس‌زمینه به بنفش */
+    color: #fff; /* تغییر رنگ متن به سفید */
+    border: 2px solid #650859; /* تغییر رنگ مرز به بنفش تیره‌تر */
+    transform: scale(1.05); /* بزرگ‌تر شدن دکمه هنگام هاور */
+    box-shadow: 0 4px 10px rgba(117, 34, 162, 0.5); /* اضافه کردن سایه به دکمه */
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5); /* ایجاد اثر درخشان روی متن */
+}
+/*.header-left__caption{
+    font-size: 15px;
+    font-family: poppins-regular;
+    color: #fff;
+    width: 29rem;
+}*/
+.header-left__caption {
+    font-size: 1.5rem; /* افزایش اندازه فونت برای خوانایی بهتر */
+    font-family: poppins-regular, sans-serif; /* استفاده از فونت Poppins */
+    color: #fff; /* رنگ سفید برای متن */
+    width: 29rem; /* عرض مشخص برای نگه داشتن متن */
+    line-height: 1.6; /* فاصله خطی بهتر برای خوانایی */
+    letter-spacing: 0.5px; /* فاصله بین حروف */
+    word-wrap: break-word; /* شکستن کلمات بلند */
+}
